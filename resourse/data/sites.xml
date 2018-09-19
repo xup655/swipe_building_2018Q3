@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FileZilla3 version="3.27.0" platform="*nix">
+	<Servers>
+		<Server>
+			<Host>3t9s.com</Host>
+			<Port>21</Port>
+			<Protocol>6</Protocol>
+			<Type>0</Type>
+			<User>ml@3t9s.com</User>
+			<Pass encoding="base64">dVtULDhALUxKNHFy</Pass>
+			<Logontype>1</Logontype>
+			<TimezoneOffset>0</TimezoneOffset>
+			<PasvMode>MODE_DEFAULT</PasvMode>
+			<MaximumMultipleConnections>0</MaximumMultipleConnections>
+			<EncodingType>Auto</EncodingType>
+			<BypassProxy>0</BypassProxy>
+			<Name>複製 - 3T9S</Name>
+			<Comments />
+			<Colour>0</Colour>
+			<LocalDir>/var/www/</LocalDir>
+			<RemoteDir>1 0</RemoteDir>
+			<SyncBrowsing>1</SyncBrowsing>
+			<DirectoryComparison>0</DirectoryComparison>
+		</Server>
+	</Servers>
+</FileZilla3>
