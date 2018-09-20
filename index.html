@@ -57,9 +57,9 @@
            </section>
         </div>
         <div id="about" class="swiper-slide" style="background-image: url('assets/img/about.jpg');">
-          </div>
-          <div id="project" class="swiper-slide" style="background-image: url('assets/img/project.jpg');">
-            <section id="showcas">
+        </div>
+        <div id="project" class="swiper-slide" style="background-image: url('assets/img/project.jpg');">
+          <section id="showcas">
             <div class="container  content">
                 <div class="col-xs-12 col-sm-6 col-md-6">
                   <div class="showcase-left">
@@ -88,16 +88,16 @@
                 </div>
             </div>
           </section>
-          </div>
         </div>
       </div>
-      <div id="about" class="swiper-slide">
-        <footer>
-          <div id="about" class="swiper-slide">
-            </div>
-        </footer>
-        </div>
-<!-- 營建工程 -->
+    </div>
+    <div id="about" class="swiper-slide">
+      <footer>
+        <div id="about" class="swiper-slide">
+          </div>
+      </footer>
+    </div>
+  <!-- 營建工程 -->
   <div class="overlay overlay1" style="height:100%;">
 		<div style="float:right;padding:50px 50px 0 0;">
 			<a class="btn_close">
@@ -550,7 +550,8 @@
               </div>
               </div>
             </div>
-    			</div>
+          </div>
+          <div class="swiper-pagination swiper-pagination-v"></div>
     			<!-- Add Arrows -->
     			<div class="swiper-button-next" stype="t2"></div>
     			<div class="swiper-button-prev" stype="t2"></div>
@@ -839,7 +840,8 @@
           </div>
   				</div>
         </div>
-			</div>
+      </div>
+      <div class="swiper-pagination swiper-pagination-v"></div>
 			<!-- Add Arrows -->
 			<div class="swiper-button-next" stype="t1"></div>
 			<div class="swiper-button-prev" stype="t1"></div>
@@ -1017,13 +1019,14 @@
 			direction: 'vertical',
 			slidesPerView: 1,
 			spaceBetween: 0,
-			mousewheel: {
-			  sensitivity: 0
-			},
-			pagination: {
-			  el: '.swiper-pagination',
-			  clickable: true,
-			},
+			// mousewheel: {
+      //   sensitivity: 0,
+      // },
+      mousewheel: true,
+			// pagination: {
+			//   el: '.swiper-pagination',
+			//   clickable: true,
+			// },
 			speed: 300,
 			//loop: true,
       // navigation: {

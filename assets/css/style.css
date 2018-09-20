@@ -3,7 +3,7 @@
 html, body {
   position: relative;
   height: 100%;
-  overflow-x: hidden; }
+  overflow: hidden; }
 
 body {
   font-family: "Microsoft JhengHei",微軟正黑體,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -192,21 +192,6 @@ h4 {
   border: 1px solid #fff;
   color: #212121; }
 
-.swiper-pagination-bullet {
-  border-radius: 50%;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0);
-  -webkit-transition: box-shadow 0.3s ease;
-  transition: box-shadow 0.3s ease;
-  background: transparent;
-  width: 15px;
-  height: 15px;
-  padding: 0;
-  text-indent: -999em;
-  background: rgba(255, 255, 255, 0.3);
-  position: relative;
-  margin: 5px 0;
-  opacity: 1; }
-
 .swiper-pagination-bullet:before {
   content: "";
   -webkit-transition: background-color 0.3s ease, -webkit-transform 0.3s ease;
@@ -223,21 +208,11 @@ h4 {
   cursor: pointer;
   position: absolute; }
 
-.swiper-pagination-bullet.swiper-pagination-bullet-active,
-.swiper-pagination-bullet:hover {
-  box-shadow: 0 0 0 1px white;
-  border: none;
-  border-radius: 50%;
-  background: transparent; }
-
 .swiper-pagination-bullet.swiper-pagination-bullet-active:before,
 .swiper-pagination-bullet:hover:before {
   transform: scale(0.2);
   -webkit-transform: scale(0.2);
   background-color: white; }
-
-.swiper-pagination {
-  display: none; }
 
 .swiper-relative {
   position: relative; }
