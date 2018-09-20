@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/fontawesome-all.css">
 	<link rel="stylesheet" href="assets/swiper/css/swiper.min.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.js"></script>
 	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 	<!-- 載入 mCustomScrollbar LIB -->
@@ -968,6 +968,7 @@
   </div>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="assets/js/index.js"></script>
 
     <script>
         window.sr = ScrollReveal();
@@ -1025,10 +1026,10 @@
 			},
 			speed: 300,
 			//loop: true,
-			  navigation: {
-				  nextEl: '.swiper-button-next[stype="master"]',
-				  prevEl: '.swiper-button-prev[stype="master"]',
-				},
+      // navigation: {
+      //   nextEl: '.swiper-button-next[stype="master"]',
+      //   prevEl: '.swiper-button-prev[stype="master"]',
+      // },
 			on: {
 			  init: function(){
 				$('.swiper-slide-active').addClass('transitioned')
@@ -1079,50 +1080,7 @@
 
     <!--slide-->
     <script>
-	var swiper2;
-	var swiper3;
-	$(document).ready(function(){
-		swiper2 = new Swiper('.swiper-container[stype="t1"]', {
-			direction:"horizontal",
-			// slidesPerView: 3,
-			// spaceBetween: 30,
-			navigation: {
-				nextEl: '.swiper-button-next[stype="t1"]',
-				prevEl: '.swiper-button-prev[stype="t1"]',
-			},
-			 observer: true,
-			observeParents: true
-		});
-
-		$('.overlay2 .team_menu_list li a').click(function(){
-			var inx=$(this).attr('inx');
-			swiper2.slideTo(inx, 300, function(){
-
-			});
-		});
-		swiper3 = new Swiper('.swiper-container[stype="t2"]', {
-			direction:"horizontal",
-      speed: 800,
-      // width: 7000,
-			slidesPerView: 3,
-			spaceBetween: 30,
-      slidesPerGroup: 3,
-			navigation: {
-				nextEl: '.swiper-button-next[stype="t2"]',
-				prevEl: '.swiper-button-prev[stype="t2"]',
-			},
-      observer: true,
-			observeParents: true
-		});
-
-
-		$('.overlay1 .team_menu_list li a').click(function(){
-			var inx=$(this).attr('inx');
-			swiper3.slideTo(inx, 300, function(){
-
-			});
-		});
-	});
+	
 
     </script>
 

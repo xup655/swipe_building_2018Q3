@@ -109,6 +109,15 @@ h4{
   margin-top: 0%;
 }
 
+.t1,
+.t2 {
+  .swiper-button-next, .swiper-button-prev {
+    top: 0;
+    width: 100px;
+    height: 100%;
+  }
+}
+
 .t1 img,
 .t2 img{
   width: 82%;
@@ -128,8 +137,8 @@ h4{
  border-radius:10px !important;
  padding: 0;
  margin-top: 0%;
- transition-timing-function: cubic-bezier(0.8, 0.14, 0.94, 0.81);
- transition-timing-function: cubic-bezier(1, 0.01, 0.39, 1);
+//  transition-timing-function: cubic-bezier(0.8, 0.14, 0.94, 0.81);
+//  transition-timing-function: cubic-bezier(1, 0.01, 0.39, 1);
 }
 
 
