@@ -111,15 +111,15 @@ h4 {
   margin-right: 0;
   margin-top: 0%; }
 
+.swiper_arrows {
+  width: 5%;
+  height: auto;
+  min-width: 50px;
+  background: none !important; }
+
 .t1 img,
 .t2 img {
-  width: 82%;
-  border-radius: 0px;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  border-radius: 10px;
-  margin-right: 0;
-  margin-top: -20%; }
+  border-radius: 0px; }
 
 .t1 .swiper-wrapper,
 .t2 .swiper-wrapper {
@@ -256,26 +256,17 @@ h4 {
   width: 100%;
   height: 80%; }
 
-/* .swiper-slide[stype="t1"],
+.swiper-slide[stype="t1"],
 .swiper-slide[stype="t2"] {
   text-align: center;
   font-size: 18px;
-  background: #fff;
-  border-radius: 0px;
+  border-radius: 10px;
   margin-left: 30px;
   margin-right: 0px !important;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center; } */
+  /* Center slide text vertically */ }
+  .swiper-slide[stype="t1"]:not(:first-child),
+  .swiper-slide[stype="t2"]:not(:first-child) {
+    background: #fff; }
 
 .navbar-nav {
   margin-top: 35px; }
