@@ -1,5 +1,56 @@
 
 $(document).ready(function(){
+
+    $('.cn1').on('click', function(){
+        var current = $(this).closest('.swiper-slide');
+        var ind = current.attr('inx');
+        var target = current.closest('.overlay').find('.modal[inx="' + ind + '"]');
+        var ta_img = target.find('.column').length;
+        if( ta_img > 1 ) {
+            target.show().find('.mySlides').first().show();
+        }
+    });
+
+    $('.sideArrow').on('click', 'li', function(){
+        var current = $(this).closest('.modal');
+        var ind = current.attr('inx');
+        var max = current.closest('.overlay').find('.modal').length;
+        if( $(this).hasClass('next') ) {
+            current.hide();
+            ind++
+            if ( current.closest('.overlay').find('.modal[inx="' + ind + '"]').length == 0 ) {
+                for(var ind = 0; ; i++){
+                    if ( current.closest('.overlay').find('.modal[inx="' + ind + '"]').length == 0 ) {
+                        ind++
+                    } else {
+                        current.closest('.overlay').find('.modal[inx="' + ind + '"]').show().find('.mySlides').first().show();
+                    }
+                }
+            }
+            current.closest('.overlay').find('.modal[inx="' + ind + '"]').show().find('.mySlides').first().show();
+            // if( ind > max ) {
+            //     ind = 1
+            // }
+        } else if( $(this).hasClass('prev') ) {
+            current.hide();
+            ind--
+            if ( current.closest('.overlay').find('.modal[inx="' + ind + '"]').length == 0 ) {
+                for(var ind = 0; ; i--){
+                    if ( current.closest('.overlay').find('.modal[inx="' + ind + '"]').length == 0 ) {
+                        ind--
+                    } else {
+                        current.closest('.overlay').find('.modal[inx="' + ind + '"]').show().find('.mySlides').first().show();
+                    }
+                }
+            }
+            current.closest('.overlay').find('.modal[inx="' + ind + '"]').show().find('.mySlides').first().show();
+            // if( ind < 1 ) {
+            //     ind = max
+            // }
+        }
+        // $('.modal[inx="' + ind + '"]').show().find('.mySlides').first().show();
+    });
+
     var swiper2 = new Swiper('.swiper-container[stype="t1"]', {
         direction:"horizontal",
         speed: 1000,
