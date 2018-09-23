@@ -7,6 +7,7 @@ $(document).ready(function(){
         $(this).closest('.modal-content').find('.mySlides').eq(ind).show()
     });
 
+
     $('.cn1').on('click', function(){
         var current = $(this).closest('.swiper-slide');
         var ind = current.attr('inx');
@@ -117,5 +118,27 @@ $(document).ready(function(){
     //         $('#footer').removeClass('swiper-slide-next').addClass('swiper-slide-active transitioned')
         }
     }, 1000);
-    
+
+    setInterval(function(){
+        if( $('.overlay1').find('.cn1').first().is(':visible') || $('.overlay2').find('.cn1').first().is(':visible') ) {
+            var cn_h1 = $('.overlay1 .swiper-slide:not(.overlaybanner)').find('.cn1').outerHeight();
+            var cn_h2 = $('.overlay2 .swiper-slide:not(.overlaybanner)').find('.cn1').outerHeight();
+            $('.overlay1').find('.cn1').first().css('height', cn_h1);
+            $('.overlay2').find('.cn1').first().css('height', cn_h2);
+        }
+    }, 100)
+
+    setTimeout(function() {
+    }, 1500);
+
+    $('.button').click(function(){
+        
+        var ind = $(this).find('a').attr('stype').split('t').slice(1)
+        
+        $('.overlay' + ind).show().css('opacity', 0);
+        $('.overlay' + ind).hide().css('opacity', '');
+        setTimeout(() => {
+            $('.overlay' + ind).show();
+        }, 10);
+    })
 });

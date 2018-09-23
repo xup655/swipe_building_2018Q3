@@ -98,7 +98,6 @@ h4{
   border-radius:0px;
   -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  border-radius: 10px;
   margin-right: 0;
 }
 
@@ -107,7 +106,6 @@ h4{
   border-radius:0px;
   -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  border-radius: 10px;
   margin-right: 0;
   margin-top: 0%;
 }
@@ -128,7 +126,7 @@ h4{
 .t1 img,
 .t2 img{
   // width: 82%;
-  border-radius:0px;
+  // border-radius:0px;
   // -webkit-transform: translate3d(0,0,0);
   // transform: translate3d(0,0,0);
   // border-radius: 10px;
@@ -305,11 +303,20 @@ h4{
   //   border-radius: 10px ;
   //   margin-left: 30px;
   //   margin-right: 0px !important;
+    .cn1 {
+      border-radius: 10px;
+    }
+    &:first-child {
+      .cn1 {
+        height: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+    }
     &:not(:first-child) {
       .cn1 {
         background: #fff;
         border: 15px solid #fff;
-        border-radius: 10px;
       }
     }
   }

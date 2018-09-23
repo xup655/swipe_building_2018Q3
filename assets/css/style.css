@@ -102,7 +102,6 @@ h4 {
   border-radius: 0px;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-  border-radius: 10px;
   margin-right: 0; }
 
 .swiper-wrapper .overlaybanner img {
@@ -110,7 +109,6 @@ h4 {
   border-radius: 0px;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-  border-radius: 10px;
   margin-right: 0;
   margin-top: 0%; }
 
@@ -124,10 +122,6 @@ h4 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%); }
-
-.t1 img,
-.t2 img {
-  border-radius: 0px; }
 
 .cn1 {
   text-align: center;
@@ -229,11 +223,20 @@ h4 {
   height: 100%;
   width: 90%; }
 
+.swiper-slide[stype="t1"] .cn1,
+.swiper-slide[stype="t2"] .cn1 {
+  border-radius: 10px; }
+
+.swiper-slide[stype="t1"]:first-child .cn1,
+.swiper-slide[stype="t2"]:first-child .cn1 {
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden; }
+
 .swiper-slide[stype="t1"]:not(:first-child) .cn1,
 .swiper-slide[stype="t2"]:not(:first-child) .cn1 {
   background: #fff;
-  border: 15px solid #fff;
-  border-radius: 10px; }
+  border: 15px solid #fff; }
 
 .navbar-nav {
   margin-top: 35px; }

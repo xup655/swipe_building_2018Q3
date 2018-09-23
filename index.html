@@ -1280,6 +1280,10 @@
       // mousewheel: {
       //   sensitivity: 0,
       // },
+      // scrollbar: {
+      //   el: '.swiper-scrollbar',
+      //   draggable: false,
+      // },
       mousewheel: true,
       pagination: {
         el: '.swiper-pagination',
@@ -1317,7 +1321,7 @@
 
     $(document).ready(function () {
       $(".button a[stype='t1']").click(function () {
-        $(".overlay1").fadeToggle(200);
+        // $(".overlay1").fadeToggle(200);
         $(this).toggleClass('btn-open').toggleClass('btn-close');
       });
       $('.overlay1 .btn_close').on('click', function () {
@@ -1327,7 +1331,7 @@
       });
 
       $(".button a[stype='t2']").click(function () {
-        $(".overlay2").fadeToggle(200);
+        // $(".overlay2").fadeToggle(200);
         $(this).toggleClass('btn-open').toggleClass('btn-close');
       });
       $('.overlay2 .btn_close').on('click', function () {
