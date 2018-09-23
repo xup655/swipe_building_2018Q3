@@ -1,6 +1,12 @@
 
 $(document).ready(function(){
 
+    $('.demo').on('click', function(){
+        $('.mySlides').hide();
+        var ind = $(this).closest('.column').index();
+        $(this).closest('.modal-content').find('.mySlides').eq(ind).show()
+    });
+
     $('.cn1').on('click', function(){
         var current = $(this).closest('.swiper-slide');
         var ind = current.attr('inx');
@@ -19,7 +25,7 @@ $(document).ready(function(){
             current.hide();
             ind++
             if ( current.closest('.overlay').find('.modal[inx="' + ind + '"]').length == 0 ) {
-                for(var ind = 0; ; i++){
+                for(var i = 0; i <50 ; i++){
                     if ( current.closest('.overlay').find('.modal[inx="' + ind + '"]').length == 0 ) {
                         ind++
                     } else {
@@ -35,7 +41,7 @@ $(document).ready(function(){
             current.hide();
             ind--
             if ( current.closest('.overlay').find('.modal[inx="' + ind + '"]').length == 0 ) {
-                for(var ind = 0; ; i--){
+                for(var i = 50; i >0 ; i--){
                     if ( current.closest('.overlay').find('.modal[inx="' + ind + '"]').length == 0 ) {
                         ind--
                     } else {
@@ -90,4 +96,26 @@ $(document).ready(function(){
         swiper3.slideTo(inx, 300, function(){
         });
     });
+    
+    $('.trigger_about').on('click', function(){
+        $('.swiper-pagination').first().find('.swiper-pagination-bullet').eq(1).click();
+    });
+    $('.trigger_project').on('click', function(){
+        $('.swiper-pagination').first().find('.swiper-pagination-bullet').eq(2).click();
+    });
+    $('.trigger_footer').on('click', function(){
+        $('.swiper-pagination').first().find('.swiper-pagination-bullet').eq(3).click();
+        swiper.activeIndex = 3
+    });
+
+    setInterval(function(){
+        if( $('#project').hasClass('zz')) {
+            swiper.activeIndex = 3
+    //         $('#project').removeClass('swiper-slide-prev');
+            $('#project').removeClass('swiper-slide-active zz').addClass('swiper-slide-prev transitioned');;
+            
+    //         $('#footer').removeClass('swiper-slide-next').addClass('swiper-slide-active transitioned')
+        }
+    }, 1000);
+    
 });

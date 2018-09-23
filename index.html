@@ -24,7 +24,7 @@
 <body>
   <div class="swiper-container" stype="master">
     <div class="swiper-wrapper">
-      <div class="swiper-slide swiper-relative" style="background-image:url('assets/img/intro-bg.jpg');">
+      <div class="swiper-slide swiper-relative" data-hash="home" style="background-image:url('assets/img/intro-bg.jpg');">
         <section id="showcase">
           <div class="container">
             <div class="row">
@@ -46,27 +46,27 @@
             <div class="collapse navbar-collapse pull-right" id="navbarResponsive">
               <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item nav-link js-scroll-trigger" role="presentation">
-                  <a class="nav-link js-scroll-trigger" style="font-size:18px;" href="#about">關於和泰興</a>
+                  <a class="nav-link js-scroll-trigger trigger_about" style="font-size:18px;" href="javascript: void(0)">關於和泰興</a>
                 </li>
                 <li class="nav-item nav-link js-scroll-trigger" role="presentation">
-                  <a class="nav-link js-scroll-trigger" style="font-size:18px;" href="#project">業績作品</a>
+                  <a class="nav-link js-scroll-trigger trigger_project" style="font-size:18px;" href="javascript: void(0)">業績作品</a>
                 </li>
-                <li class="nav-item nav-link js-scroll-trigger" role="presentation">
-                  <a class="nav-link js-scroll-trigger" style="font-size:18px;" href="#contact">聯絡我們</a>
+                <li class="nav-item nav-link js-scroll-trigger trigger_footer" role="presentation">
+                  <a class="nav-link js-scroll-trigger trigger_contact" style="font-size:18px;" href="javascript: void(0)">聯絡我們</a>
                 </li>
               </ul>
             </div>
           </div>
         </nav>
         <section id="section01" class="demo demo-arrow">
-          <a href="#about">
+          <a class="trigger_about" href="javascript: void(0)">
             <img src="assets/img/next.png" alt="">
           </a>
         </section>
       </div>
-      <div id="about" class="swiper-slide" style="background-image: url('assets/img/about.jpg');">
+      <div id="about" class="swiper-slide" data-hash="about" style="background-image: url('assets/img/about.jpg');">
       </div>
-      <div id="project" class="swiper-slide" style="background-image: url('assets/img/project.jpg');">
+      <div id="project" class="swiper-slide" data-hash="project" style="background-image: url('assets/img/project.jpg');">
         <section id="showcas">
           <div class="container  content">
             <div class="col-xs-12 col-sm-6 col-md-6">
@@ -97,14 +97,16 @@
           </div>
         </section>
       </div>
+      <div id="footer" class="swiper-slide" data-hash="footer" style="background-image: url('assets/img/footer.jpg');"></div>
     </div>
+    <div class="swiper-pagination"></div>
   </div>
-  <div id="about" class="swiper-slide">
+  <!-- <div id="about" class="swiper-slide">
     <footer>
       <div id="about" class="swiper-slide">
       </div>
     </footer>
-  </div>
+  </div> -->
   <!-- 營建工程 -->
   <div class="overlay overlay1" style="height:100%;">
     <div class="outerWrap">
@@ -669,7 +671,6 @@
           </div>
         </div>
       </div>
-      <div class="swiper-pagination swiper-pagination-v"></div>
     </div>
     <!-- Add Arrows -->
     <div class="swiper_arrows swiper-button-next" stype="t2">
@@ -1058,7 +1059,6 @@
           </div>
         </div>
       </div>
-      <div class="swiper-pagination swiper-pagination-v"></div>
     </div>
     <!-- Add Arrows -->
     <div class="swiper_arrows swiper-button-next" stype="t1">
@@ -1272,15 +1272,19 @@
     var swiper = new Swiper('.swiper-container[stype="master"]', {
       direction: 'vertical',
       slidesPerView: 1,
+      slidesPerView: 'auto',
       spaceBetween: 0,
+      // hashNavigation: {
+      //   watchState: true,
+      // },
       // mousewheel: {
       //   sensitivity: 0,
       // },
       mousewheel: true,
-      // pagination: {
-      //   el: '.swiper-pagination',
-      //   clickable: true,
-      // },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
       speed: 300,
       //loop: true,
       // navigation: {
@@ -1297,7 +1301,7 @@
     var previous = swiper.activeIndex;
 
     swiper.on('slideNextTransitionStart', function () {
-      $('.transitioned').addClass('animate-up')
+      $('.transitioned').addClass('animate-up zz')
       $('.swiper-slide').removeClass('transitioned');
     })
 
@@ -1477,7 +1481,7 @@
           this.inx = 0;
         }
       },
-      'showSlides': function (n) {
+      /*'showSlides': function (n) {
         var i;
         var slides = $("#myModal2 .mySlides");
         var dots = $("#myModal2 .demo");
@@ -1486,7 +1490,7 @@
 
         $('#myModal2 .mysl .mySlides').hide();
         $('#myModal2 .mysl .mySlides').eq(n).show();
-      }
+      }*/
     }
   </script>
 

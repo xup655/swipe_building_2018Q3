@@ -94,6 +94,9 @@ h4 {
   align-items: center;
   flex-direction: column; }
 
+#footer {
+  height: 150px !important; }
+
 .swiper-wrapper img {
   width: 82%;
   border-radius: 0px;
@@ -112,6 +115,7 @@ h4 {
   margin-top: 0%; }
 
 .swiper_arrows {
+  z-index: 1 !important;
   width: 5%;
   height: 100%;
   min-width: 50px;
@@ -202,6 +206,9 @@ h4 {
   transform: scale(0.2);
   -webkit-transform: scale(0.2);
   background-color: white; }
+
+.swiper-pagination {
+  display: none; }
 
 .swiper-relative {
   position: relative; }
