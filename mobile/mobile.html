@@ -37,6 +37,9 @@
         background-position: center center;
         background-repeat: no-repeat;
     }
+    .swiper-pagination {
+        display: none;
+    }
     #about {
         background-position: right bottom;
     }
@@ -127,6 +130,9 @@
         vertical-align: middle;
         text-align: center;
     }
+    .hide {
+        display: none !important;
+    }
 </style>
 </head>
 
@@ -141,13 +147,13 @@
                     <div class="logo">
                         <img src="assets/img/home-logo.svg">
                     </div>
-                    <ul class="">
-                        <li>關於和泰</li>
-                        <li>業績作品</li>
-                        <li>聯絡我們</li>
+                    <ul>
+                        <li class="about js_link">關於和泰</li>
+                        <li class="project js_link">業績作品</li>
+                        <li class="footer js_link">聯絡我們</li>
                     </ul>
                 </div>
-                <a href="javascript: void(0)" class="pageDown">
+                <a href="javascript: void(0)" class="pageDown js_pageDown">
                     <img src="assets/img/home-pagedown.svg">
                 </a>
             </div>
@@ -155,6 +161,7 @@
             <div id="project" class="swiper-slide" data-hash="project" style="background-image: url('assets/img/project.jpg');"></div>
             <div id="footer" class="swiper-slide" data-hash="footer" style="background-image: url('assets/img/footer.svg');"></div>
         </div>
+        <div class="swiper-pagination"></div>
     </div>
 </body>
 

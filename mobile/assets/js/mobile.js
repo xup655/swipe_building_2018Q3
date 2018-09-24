@@ -1,28 +1,62 @@
 $(document).ready(function(){
-      var swiper = new Swiper('.swiper-container', {
-        direction: 'vertical',
-        slidesPerView: 'auto',
-        spaceBetween: 0,
-        mousewheel: true,  // swiper.mousewheel.enable();
-        // on: {
-        //   init: function () {
-        //     $('.swiper-slide-active').addClass('aas')
-        //   }
-        // },
-      });
-
-      swiper.on('slideNextTransitionStart', function () {
-        $('.swiper-slide-active').addClass('zz')
-        if( $('#project').hasClass('zz')) {
-          swiper.activeIndex = 3
-          $('#project').removeClass('swiper-slide-active').addClass('swiper-slide-prev');;
-        }
-      })
-      // setInterval(function(){
-      //   if( $('#project').hasClass('swiper-slide-prev')) {
-      //       swiper.activeIndex = 3
-      //       $('#project').removeClass('swiper-slide-active swiper-slide-prev').addClass('swiper-slide-prev transitioned');;
+    // var menu = ['Slide 1', 'Slide 2', 'Slide 3', 'footer']
+    var swiper = new Swiper('.swiper-container', {
+      direction: 'vertical',
+      slidesPerView: 'auto',
+      spaceBetween: 0,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        // type: 'custom',
+        // renderBullet: function (index, className) {
+        //   return '<li class="' + className + '">' + (menu[index]) + '</li>';
+        // }
+      },
+      mousewheel: true,  // swiper.mousewheel.enable();
+      // on: {
+      //   init: function () {
+      //     $('.swiper-slide-active').addClass('aas')
       //   }
-      // }, 1000);
-      
+      // },
+    });
+
+    // 偵錯用 footer
+    swiper.on('slideNextTransitionStart', function () {
+      // $('.transitioned').addClass('animate-up zz')
+      // $('.swiper-slide').removeClass('transitioned');
+// alert()
+    //   $('.swiper-slide-active').addClass('zz')
+    //   if( $('#project').hasClass('zz')) {
+    //     swiper.activeIndex = 3
+    //     $('#project').removeClass('swiper-slide-active').addClass('swiper-slide-prev');;
+    //   }
+    })
+
+    // 偵錯用 footer
+    swiper.on('slideChangeTransitionStart', function () {
+      // alert('swiper.activeIndex:' + swiper.activeIndex)
+    })
+
+    swiper.on('slidePrevTransitionStart', function () {
+// alert()
+    })
+
+    swiper.on('transitionEnd', function () {
+// alert()
+    })
+
+    setInterval(function(){
+    //   if( $('#project').hasClass('swiper-slide-prev')) {
+    //       swiper.activeIndex = 3
+    //       $('#project').removeClass('swiper-slide-active swiper-slide-prev').addClass('swiper-slide-prev transitioned');;
+    //   }
+    }, 1000);
+
+    $('.js_link').on('click', function(){
+      var ind = $(this).index() + 1;
+      $('.swiper-pagination').find('.swiper-pagination-bullet').eq(ind).click();
+    })
+    $('.js_pageDown').click(function(){
+      $('.js_link').eq(0).click();
+    })
 });
