@@ -3,15 +3,129 @@
 <head>
 <meta charset="UTF-8">
 <title>和泰興官網</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
 <link rel="stylesheet" href="assets/swiper/css/swiper.min.css">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.js"></script>
 <style>
+    html,
+    body {
+        position: relative;
+        height: 100%;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        text-align: center;
+        font-family: '微軟正黑體';
+        font-size: 18px;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
     .swiper-slide {
-        height: 100vh;
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center center;
         background-repeat: no-repeat;
-        background-position: center top;
+    }
+    #about {
+        background-position: right bottom;
+    }
+    #footer {
+        height: 250px !important;
+        background-size: contain;
+    }
+
+    /* Styles */
+    .slogan {
+        position: relative;
+        margin: 0 auto;
+        width: 90vw;
+        height: 70vh;
+    }
+        @media (max-height: 414px) {
+            .slogan {
+                height: 130px;
+            }
+        }
+        .slogan img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            max-height: 80px;
+        }
+    .logo {
+        position: absolute;
+        width: 100%;
+        transform: translateY(-110%);
+    }
+        .logo img {
+            width: 50%;
+            max-height: 50px;
+        }
+    .nav_area {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 13vh;
+        min-height: 90px;
+        background: rgba(6, 23, 74, 0.6);
+    }
+        .nav_area ul {
+            display: flex;
+            justify-content: space-around;
+            margin: 15px 0;
+            padding: 0;
+            list-style: none;
+        }
+        .nav_area li {
+            flex: 1;
+            color: #fff;
+        }
+            .nav_area li + li {
+                border-left: 1px solid rgba(255, 255, 255, .5);
+            }
+    .pageDown {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 5vh;
+        min-width: 30px;
+        transform: translateX(-50%);
+    }
+        .pageDown img {
+            animation: moveNavArrow 1s infinite;
+        }
+    @keyframes moveNavArrow{
+        0%{
+            opacity: .5;
+            transform:translateY(0);
+        }
+        35%{
+            opacity: 1;
+            transform:translateY(-4px);
+        }
+        100%{
+            opacity: .5;
+            transform:translateY(0);
+        }
+    }
+
+    /* Layout */
+    .container {
+        display: table-cell;
+        width: 100%;
+        vertical-align: middle;
+        text-align: center;
     }
 </style>
 </head>
@@ -19,8 +133,27 @@
 <body>
     <div class="swiper-container" stype="master">
         <div class="swiper-wrapper">
+            <div id="home" class="swiper-slide" data-hash="home" style="background-image: url('assets/img/home.jpg');">
+                <div class="slogan">
+                    <img src="assets/img/home-slogan.svg">
+                </div>
+                <div class="nav_area">
+                    <div class="logo">
+                        <img src="assets/img/home-logo.svg">
+                    </div>
+                    <ul class="">
+                        <li>關於和泰</li>
+                        <li>業績作品</li>
+                        <li>聯絡我們</li>
+                    </ul>
+                </div>
+                <a href="javascript: void(0)" class="pageDown">
+                    <img src="assets/img/home-pagedown.svg">
+                </a>
+            </div>
             <div id="about" class="swiper-slide" data-hash="about" style="background-image: url('assets/img/about.jpg');"></div>
-            <div id="about" class="swiper-slide" data-hash="about" style="background-image: url('assets/img/about.jpg');"></div>
+            <div id="project" class="swiper-slide" data-hash="project" style="background-image: url('assets/img/project.jpg');"></div>
+            <div id="footer" class="swiper-slide" data-hash="footer" style="background-image: url('assets/img/footer.svg');"></div>
         </div>
     </div>
 </body>

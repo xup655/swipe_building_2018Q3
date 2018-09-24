@@ -112,10 +112,7 @@ $(document).ready(function(){
     setInterval(function(){
         if( $('#project').hasClass('zz')) {
             swiper.activeIndex = 3
-    //         $('#project').removeClass('swiper-slide-prev');
             $('#project').removeClass('swiper-slide-active zz').addClass('swiper-slide-prev transitioned');;
-            
-    //         $('#footer').removeClass('swiper-slide-next').addClass('swiper-slide-active transitioned')
         }
     }, 1000);
 
