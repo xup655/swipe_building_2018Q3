@@ -52,11 +52,43 @@ $(document).ready(function(){
     //   }
     }, 1000);
 
+    // 下一頁
     $('.js_link').on('click', function(){
       var ind = $(this).index() + 1;
       $('.swiper-pagination').find('.swiper-pagination-bullet').eq(ind).click();
     })
     $('.js_pageDown').click(function(){
       $('.js_link').eq(0).click();
+    })
+
+    $('.js_open').on('click', function(){
+      $(this).find('.mask').removeClass('hide');
+      // if( $(this).hasClass('construction') ) {}
+    })
+
+    $('.close-btn').click(function(){
+      $(this).closest('.mask').addClass('hide');
+      // 顯示歸0 重新開始
+    })
+
+    // 資料
+    
+    for ( var i=0; i<30; i++) {
+      $('<li>2017 閑閑</li>').appendTo($('.nav ul'));
+    }
+
+    $('.listname').on('click', function(){
+      var current = $(this).closest('.nav')
+      if( current.find('.listdown').is(':visible') ) {
+        swiper.mousewheel.disable();
+        current.addClass('full');
+        current.find('ul').show();
+        current.find('.listdown').removeClass('listdown').addClass('listup')
+      } else {
+        swiper.mousewheel.enable();
+        current.removeClass('full');
+        current.find('ul').hide();
+        current.find('.listup').removeClass('listup').addClass('listdown')
+      }
     })
 });
