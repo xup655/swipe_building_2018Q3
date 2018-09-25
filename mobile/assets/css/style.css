@@ -753,9 +753,6 @@ img {
   padding: 2px 16px;
   color: white; }
 
-.demo {
-  opacity: 0.6; }
-
 .active,
 .demo:hover {
   opacity: 1; }

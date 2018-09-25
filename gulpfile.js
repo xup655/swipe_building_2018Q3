@@ -5,7 +5,7 @@ gulp.task('sass', function() {
 
   return gulp.src('resourse/sass/*.scss')
           .pipe(scss())
-/*          .pipe(gulp.dest('assets/css'))*/
+          // .pipe(gulp.dest('assets/css'))
           .pipe(gulp.dest('mobile/assets/css'))
 
 });

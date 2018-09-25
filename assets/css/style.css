@@ -374,7 +374,8 @@ h4 {
 .content-section {
   height: 100%; }
 
-#section01 a img {
+.trigger_about img,
+.trigger_project img {
   position: fixed;
   top: -350;
   left: 50%;
@@ -756,7 +757,6 @@ img {
 .demo {
   opacity: 0.6; }
 
-.active,
 .demo:hover {
   opacity: 1; }
 

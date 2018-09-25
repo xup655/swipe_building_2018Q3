@@ -14,6 +14,7 @@ $(document).ready(function(){
         var target = current.closest('.overlay').find('.modal[inx="' + ind + '"]');
         var ta_img = target.find('.column').length;
         if( ta_img > 1 ) {
+            $('.mySlides').hide();
             target.show().find('.mySlides').first().show();
         }
     });
