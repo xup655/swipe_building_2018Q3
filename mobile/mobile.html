@@ -50,53 +50,17 @@
                     <div class="pull-left w-half">
                         <img src="assets/img/project-tit.svg" class="project-tit">
                         <img src="assets/img/project-sub.svg" class="project-sub">
-                        <div class="project-box js_open construction">
+                        <div class="project-box js_open construction" data-pid="1">
                             <i class="icon-hat"><img src="assets/img/icon-hat.svg"></i>
                             <div class="project-img construction"></div>
                             <div class="project-foot">
                                 <img src="assets/img/project-construction-tit.svg">
                             </div>
-                            <div class="mask full hide">
-                                <div class="close-btn"></div>
-                                <div class="nav">
-                                    <span class="listname">作品列表<i class="listdown"></i></span>
-                                    <ul>
-                                        <!-- <li>2017 閑閑</li> -->
-                                    </ul>
-                                </div>
-                                <div class="container">
-                                    <div class="project-cont">
-                                        <div class="photo">
-                                            <!-- <img src="assets/img/project-construction.jpg" class="w-100"> -->
-                                            <img src="assets/img/mobile.jpg" class="w-100">
-                                        </div>
-                                        <div class="summary">
-                                            <h3>
-                                                <em>2017, YILAN</em>
-                                                <strong>閑閑</strong>
-                                            </h3>
-                                            <dl>
-                                                <div class="row">
-                                                    <dt>總樓板面積：</dt>
-                                                    <dd>5608.87m2</dd>
-                                                </div>
-                                                <div class="row">
-                                                    <dt>基地位置：</dt>
-                                                    <dd>礁溪鄉公園路</dd>
-                                                </div>
-                                                <div class="row">
-                                                    <dt>層數：</dt>
-                                                    <dd>B1-11F</dd>
-                                                </div>
-                                            </dl>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <!--  mask OLD PLACED -->
                         </div>
                     </div>
                     <div class="pull-right w-half">
-                        <div class="project-box js_open decoration">
+                        <div class="project-box js_open decoration" data-pid="2">
                             <i class="icon-tool"><img src="assets/img/icon-tool.svg"></i>
                             <div class="project-img decoration"></div>
                             <div class="project-foot">
@@ -104,7 +68,7 @@
                             </div>
                         </div>
                         <!-- <img src="assets/img/project-txt.svg"> -->
-                        <p style="margin-right: 10px;text-align: left; line-height: 1.8; letter-spacing: .5px;font-size: 12px; font-weight: bold;color: #4C4948;">
+                        <p style="margin-right: 10px;text-align: left; line-height: 1.8; letter-spacing: .5px; font-weight: bold;color: #4C4948;">
                             主要營運項目：土地投資開發、都市更新、建築土木工程承攬及施工、室內空間設計及裝潢施工、商業辦公住宅大樓投資興建與租售。
                         </p>
                     </div>
@@ -113,6 +77,50 @@
             <div id="footer" class="swiper-slide" data-hash="footer" style="background-image: url('assets/img/footer.svg');"></div>
         </div>
         <div class="swiper-pagination"></div>
+    </div>
+    <div class="mask full hide" data-pid="1">
+        <div class="close-btn"></div>
+        <div class="nav">
+            <span class="listname">作品列表<i class="listup"></i></span>
+            <ul>
+                <!-- <li>2017 閑閑</li> -->
+            </ul>
+        </div>
+        <div class="container">
+            <div class="listleft"></div>
+            <div class="listright"></div>
+            <div class="project-cont">
+                <ul class="photo">
+                    <li><img src="assets/img/project-construction.jpg" class="w-100"></li>
+                    <li><img src="assets/img/mobile.jpg" class="w-100"></li>
+                </ul>
+                <div class="summary">
+                    <h3>
+                        <em>2017, YILAN</em>
+                        <strong>閑閑</strong>
+                    </h3>
+                    <dl>
+                        <div class="row">
+                            <dt>總樓板面積：</dt>
+                            <dd>5608.87m2</dd>
+                        </div>
+                        <div class="row">
+                            <dt>基地位置：</dt>
+                            <dd>礁溪鄉公園路</dd>
+                        </div>
+                        <div class="row">
+                            <dt>層數：</dt>
+                            <dd>B1-11F</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mask full hide" data-pid="2">
+        <div class="close-btn"></div>
+        22222222
+    </div>
     </div>
 </body>
 

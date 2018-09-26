@@ -157,8 +157,13 @@ body {
     transform: rotate(-45deg); }
 
 .photo {
+  margin: 0;
+  padding: 0;
+  list-style: none;
   max-height: calc(70vh - 80px);
   overflow: hidden; }
+  .photo li {
+    float: left; }
 
 .summary {
   margin: 0 20px;
@@ -185,6 +190,46 @@ body {
   .summary dd {
     overflow: hidden; }
 
+.listdown,
+.listup,
+.listleft,
+.listright {
+  width: 12px;
+  height: 12px; }
+  .listdown:before, .listdown:after,
+  .listup:before,
+  .listup:after,
+  .listleft:before,
+  .listleft:after,
+  .listright:before,
+  .listright:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    border-top: 1px solid;
+    transform: rotate(47deg) translate(49%, 0px); }
+  .listdown:after,
+  .listup:after,
+  .listleft:after,
+  .listright:after {
+    transform: rotate(-47deg) translate(-49%, 0px); }
+
+.listleft {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  width: 20px;
+  transform: rotate(-90deg);
+  color: #a6a6a6; }
+
+.listright {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 20px;
+  transform: rotate(90deg);
+  color: #a6a6a6; }
+
 .nav {
   z-index: 2;
   padding: 20px 30px;
@@ -203,20 +248,7 @@ body {
     display: inline-block;
     position: relative;
     left: 10px;
-    width: 12px;
-    height: 12px;
     transition: .3s; }
-    .nav .listdown:before, .nav .listdown:after,
-    .nav .listup:before,
-    .nav .listup:after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      border-top: 1px solid;
-      transform: rotate(47deg) translate(49%, 0px); }
-    .nav .listdown:after,
-    .nav .listup:after {
-      transform: rotate(-47deg) translate(-49%, 0px); }
   .nav .listup {
     transform: rotate(180deg); }
   .nav ul {
@@ -235,7 +267,7 @@ body {
 /* Layout */
 .container {
   display: table-cell;
-  padding: 0 5vw;
+  padding: 0 10vw;
   vertical-align: middle;
   text-align: center; }
 

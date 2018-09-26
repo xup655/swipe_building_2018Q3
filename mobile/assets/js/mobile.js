@@ -62,7 +62,8 @@ $(document).ready(function(){
     })
 
     $('.js_open').on('click', function(){
-      $(this).find('.mask').removeClass('hide');
+      var id = $(this).data('pid')
+      $('.mask[data-pid="'+ id +'"]').removeClass('hide');
       // if( $(this).hasClass('construction') ) {}
     })
 
@@ -79,16 +80,16 @@ $(document).ready(function(){
 
     $('.listname').on('click', function(){
       var current = $(this).closest('.nav')
-      if( current.find('.listdown').is(':visible') ) {
+      if( current.find('.listup').is(':visible') ) {
         swiper.mousewheel.disable();
         current.addClass('full');
         current.find('ul').show();
-        current.find('.listdown').removeClass('listdown').addClass('listup')
+        current.find('.listup').removeClass('listup').addClass('listdown')
       } else {
         swiper.mousewheel.enable();
         current.removeClass('full');
         current.find('ul').hide();
-        current.find('.listup').removeClass('listup').addClass('listdown')
+        current.find('.listdown').removeClass('listdown').addClass('listup')
       }
     })
 });
