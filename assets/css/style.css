@@ -95,7 +95,7 @@ h4 {
   flex-direction: column; }
 
 #footer {
-  height: 150px !important; }
+  height: 120px !important; }
 
 .swiper-wrapper img {
   width: 82%;
@@ -373,6 +373,15 @@ h4 {
 
 .content-section {
   height: 100%; }
+
+.trigger_home img {
+  position: fixed;
+  top: -350;
+  right: 10%;
+  margin-top: -12px;
+  width: 40px;
+  height: 40px;
+  z-index: 99; }
 
 .trigger_about img,
 .trigger_project img {

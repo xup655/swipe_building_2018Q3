@@ -99,6 +99,9 @@ $(document).ready(function(){
         });
     });
     
+    $('.trigger_home').on('click', function(){
+        $('.swiper-pagination').first().find('.swiper-pagination-bullet').eq(0).click();
+    });
     $('.trigger_about').on('click', function(){
         $('.swiper-pagination').first().find('.swiper-pagination-bullet').eq(1).click();
     });
