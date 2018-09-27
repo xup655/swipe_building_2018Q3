@@ -104,7 +104,7 @@ $(document).ready(function(){
     });
 
     // 圖片click
-    $('.photo.openImg').on('click', function(){
+    $('.photo').on('click', function(){
       var pswpElement = document.querySelectorAll('.pswp')[0];
       var items = [];
 
