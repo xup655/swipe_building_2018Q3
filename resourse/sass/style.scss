@@ -916,6 +916,10 @@ color:#fff;
 
 .openModal {
   cursor: pointer;
+  transition: .5s;
+  &:hover {
+    opacity: .85;
+  }
 }
 
 .caseTitle {

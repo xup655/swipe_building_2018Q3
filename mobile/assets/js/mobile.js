@@ -46,12 +46,7 @@ $(document).ready(function(){
       $(this).closest('.mask').find('.swiper-pagination-bullet').eq(0).click();
     })
 
-    // 選單data
-    // for ( var i=0; i<30; i++) {
-    //   $('<li>2017 閑閑</li>').appendTo($('.nav ul'));
-    // }
-
-    // 選單click
+    // 列表click
     $('.click_menu').on('click', 'li', function(){
       var ind = $(this).index();
       var pid = $(this).closest('.mask').data('pid');
@@ -73,6 +68,18 @@ $(document).ready(function(){
         current.find('ul').hide();
         current.find('.listdown').removeClass('listdown').addClass('listup')
       }
+
+      // 選單data load from content
+      var _pid = $(this).closest('.mask').data('pid');
+      if( $('.mask[data-pid="' + _pid + '"]').find('.click_menu li').length < 1 ) {
+        var _num = $('.swiper-container.t' + _pid + ' .swiper-slide').length
+        var menu_txt = [];
+        for ( var i=0; i < _num; i++) {
+          var txt = '<li>' + $('.swiper-container.t' + _pid + ' h2').eq(i).text() + '</li>'
+          menu_txt.push(txt);
+        }
+        $('.mask[data-pid="' + _pid + '"]').find('.click_menu').append(menu_txt)
+      }
     })
 
     // 輪播
@@ -87,7 +94,7 @@ $(document).ready(function(){
         el: '.swiper-pagination.t1',
         clickable: true,
       },
-      loop: true,
+      // loop: true,
     });
     var mySwiper = new Swiper('.swiper-container.t2', {
       speed: 100,
@@ -100,7 +107,7 @@ $(document).ready(function(){
         el: '.swiper-pagination.t2',
         clickable: true,
       },
-      loop: true,
+      // loop: true,
     });
 
     // 圖片click
@@ -149,20 +156,6 @@ $(document).ready(function(){
     // $('.listright').on('click', function(){
     //   $(this).closest('.mask').find('.photo_wrap').css('left', '-' + _width);
     // })
-
-    var dir = "../assets/img";
-    var fileextension = ".png";
-    $.ajax({
-      //This will retrieve the contents of the folder if the folder is configured as 'browsable'
-      url: dir,
-      success: function (data) {
-        //List all .png file names in the page
-        $(data).find("a:contains(" + fileextension + ")").each(function () {
-            var filename = this.href.replace(window.location.host, "").replace("http://", "");
-            $("body").append("<img class='aad' src='" + dir + filename + "'>");
-        });
-      }
-    });
 
 });
 
