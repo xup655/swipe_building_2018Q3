@@ -7,9 +7,9 @@ $(document).ready(function(){
         el: '.swiper-pagination.master',
         clickable: true,
       },
-      hashNavigation: {
-        watchState: true,
-      },
+      // hashNavigation: {
+      //   watchState: true,
+      // },
       mousewheel: true,
     });
 
@@ -29,10 +29,13 @@ $(document).ready(function(){
     // 下一頁
     $('.js_link').on('click', function(){
       var ind = $(this).index() + 1;
-      $('.swiper-pagination').find('.swiper-pagination-bullet').eq(ind).click();
+      $('.swiper-pagination.master').find('.swiper-pagination-bullet').eq(ind).click();
     })
     $('.js_pageDown').click(function(){
       $('.js_link').eq(0).click();
+    })
+    $('.js_pageHome').click(function(){
+      $('.swiper-pagination.master').find('.swiper-pagination-bullet').eq(0).click();
     })
 
     $('.js_open').on('click', function(){

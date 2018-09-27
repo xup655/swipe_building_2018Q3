@@ -7,18 +7,21 @@ $(document).ready(function(){
         el: '.swiper-pagination.master',
         clickable: true,
       },
-      hashNavigation: {
-        watchState: true,
-      },
+      // hashNavigation: {
+      //   watchState: true,
+      // },
       mousewheel: true,
     });
 
     $('.js_link').on('click', function(){
       var ind = $(this).index() + 1;
-      $('.swiper-pagination').find('.swiper-pagination-bullet').eq(ind).click();
+      $('.swiper-pagination.master').find('.swiper-pagination-bullet').eq(ind).click();
     })
     $('.js_pageDown').click(function(){
       $('.js_link').eq(0).click();
+    })
+    $('.js_pageHome').click(function(){
+      $('.swiper-pagination.master').find('.swiper-pagination-bullet').eq(0).click();
     })
 
     $('.js_open').on('click', function(){
@@ -51,6 +54,17 @@ $(document).ready(function(){
         current.find('ul').hide();
         current.find('.listdown').removeClass('listdown').addClass('listup')
       }
+
+      var _pid = $(this).closest('.mask').data('pid');
+      if( $('.mask[data-pid="' + _pid + '"]').find('.click_menu li').length < 1 ) {
+        var _num = $('.swiper-container.t' + _pid + ' .swiper-slide').length
+        var menu_txt = [];
+        for ( var i=0; i < _num; i++) {
+          var txt = '<li>' + $('.swiper-container.t' + _pid + ' h2').eq(i).text() + '</li>'
+          menu_txt.push(txt);
+        }
+        $('.mask[data-pid="' + _pid + '"]').find('.click_menu').append(menu_txt)
+      }
     })
 
     var mySwiper = new Swiper('.swiper-container.t1', {
@@ -64,7 +78,6 @@ $(document).ready(function(){
         el: '.swiper-pagination.t1',
         clickable: true,
       },
-      loop: true,
     });
     var mySwiper = new Swiper('.swiper-container.t2', {
       speed: 100,
@@ -77,7 +90,6 @@ $(document).ready(function(){
         el: '.swiper-pagination.t2',
         clickable: true,
       },
-      loop: true,
     });
 
     $('.photo').on('click', function(){
