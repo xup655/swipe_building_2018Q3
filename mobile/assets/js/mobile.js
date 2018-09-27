@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    // var menu = ['Slide 1', 'Slide 2', 'Slide 3', 'footer']
     var swiper = new Swiper('.swiper-container', {
       direction: 'vertical',
       slidesPerView: 'auto',
@@ -7,50 +6,25 @@ $(document).ready(function(){
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
-        // type: 'custom',
-        // renderBullet: function (index, className) {
-        //   return '<li class="' + className + '">' + (menu[index]) + '</li>';
-        // }
       },
-      mousewheel: true,  // swiper.mousewheel.enable();
-      // on: {
-      //   init: function () {
-      //     $('.swiper-slide-active').addClass('aas')
-      //   }
-      // },
+      hashNavigation: {
+        watchState: true,
+      },
+      mousewheel: true,
     });
 
-    // 偵錯用 footer
-    swiper.on('slideNextTransitionStart', function () {
-      // $('.transitioned').addClass('animate-up zz')
-      // $('.swiper-slide').removeClass('transitioned');
-// alert()
-    //   $('.swiper-slide-active').addClass('zz')
-    //   if( $('#project').hasClass('zz')) {
-    //     swiper.activeIndex = 3
-    //     $('#project').removeClass('swiper-slide-active').addClass('swiper-slide-prev');;
-    //   }
-    })
+    // footer
+    // swiper.on('slideNextTransitionStart', function () {
+    // })
 
-    // 偵錯用 footer
-    swiper.on('slideChangeTransitionStart', function () {
-      // alert('swiper.activeIndex:' + swiper.activeIndex)
-    })
+    // swiper.on('slideChangeTransitionStart', function () {
+    // })
 
-    swiper.on('slidePrevTransitionStart', function () {
-// alert()
-    })
+    // swiper.on('slidePrevTransitionStart', function () {
+    // })
 
-    swiper.on('transitionEnd', function () {
-// alert()
-    })
-
-    setInterval(function(){
-    //   if( $('#project').hasClass('swiper-slide-prev')) {
-    //       swiper.activeIndex = 3
-    //       $('#project').removeClass('swiper-slide-active swiper-slide-prev').addClass('swiper-slide-prev transitioned');;
-    //   }
-    }, 1000);
+    // swiper.on('transitionEnd', function () {
+    // })
 
     // 下一頁
     $('.js_link').on('click', function(){
@@ -64,16 +38,14 @@ $(document).ready(function(){
     $('.js_open').on('click', function(){
       var id = $(this).data('pid')
       $('.mask[data-pid="'+ id +'"]').removeClass('hide');
-      // if( $(this).hasClass('construction') ) {}
     })
 
     $('.close-btn').click(function(){
       $(this).closest('.mask').addClass('hide');
-      // 顯示歸0 重新開始
+      // 歸0開始
     })
 
-    // 資料
-    
+    // data
     for ( var i=0; i<30; i++) {
       $('<li>2017 閑閑</li>').appendTo($('.nav ul'));
     }
@@ -81,15 +53,36 @@ $(document).ready(function(){
     $('.listname').on('click', function(){
       var current = $(this).closest('.nav')
       if( current.find('.listup').is(':visible') ) {
-        swiper.mousewheel.disable();
+        // swiper.mousewheel.disable();
         current.addClass('full');
         current.find('ul').show();
         current.find('.listup').removeClass('listup').addClass('listdown')
       } else {
-        swiper.mousewheel.enable();
+        // swiper.mousewheel.enable();
         current.removeClass('full');
         current.find('ul').hide();
         current.find('.listdown').removeClass('listdown').addClass('listup')
       }
     })
+
+    // 輪播
+    var mySwiper = new Swiper('.swiper-container.t1', {
+        speed: 400,
+        spaceBetween: 0,
+        navigation: {
+          nextEl: '.swiper-button-next.t1',
+          prevEl: '.swiper-button-prev.t1',
+        },
+    });
+
+    // var _width = $('.photo_wrap li').width() * $('.photo_wrap li').length;
+    // $('.photo_wrap').css('width', _width);
+
+    // $('.listright').on('click', function(){
+    //   $(this).closest('.mask').find('.photo_wrap').css('left', '-' + _width);
+    // })
 });
+
+// $(window).resize(function(){
+//   _width = $('.photo_wrap li').width() * $('.photo_wrap li').length;
+// })

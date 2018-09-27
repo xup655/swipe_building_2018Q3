@@ -13,18 +13,18 @@ body {
     font-size: 18px;
     color: #666;
 }
-.swiper-container {
+.swiper-container[stype="master"] {
     width: 100%;
     height: 100%;
-}
-.swiper-slide {
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    .swiper-slide {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
 }
 .swiper-pagination {
     display: none;
@@ -144,6 +144,7 @@ body {
     background: #2155A2;
     transform: translateY(-50%);
     img {
+      margin-top: 10%;
       width: 80%;
       vertical-align: middle;
     }
@@ -185,21 +186,40 @@ body {
     transform: rotate(-45deg);
   }
 }
+.project-cont {
+  margin: 0 auto;
+  width: 70vw;
+  overflow: hidden;
+}
 .photo {
+  max-height: calc(70vh - 80px);
+  overflow: hidden;
+}
+.photo_wrap {
+  position: relative;
   margin: 0;
   padding: 0;
   list-style: none;
-  max-height: calc(70vh - 80px);
-  overflow: hidden;
-  li {
-    float: left;
+  .swiper-slide {
+    // height: calc(100vh - 80px);
   }
+  // li {
+  //   float: left;
+  //   width: 70vw;
+  // }
 }
 .summary {
   margin: 0 20px;
   height: 30vh;
   overflow-y: auto;
   text-align: left;
+  h2, h4 {
+    line-height: 2;
+    font-weight: normal;
+  }
+  h4 {
+
+  }
   h3 {
     em {
       font-size: 20px;
@@ -304,7 +324,7 @@ body {
 /* Layout */
 .container {
     display: table-cell;
-    padding: 0 10vw;
+    padding: 0 5vw;
     // width: 100%;
     vertical-align: middle;
     text-align: center;
