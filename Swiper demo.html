@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" href="assets/swiper/css/swiper.min.css">
+
+<style>
+    .swiper-container.master {
+        width: 100%;
+        height: 100vh;
+    }
+    .swiper-slide[stype="master"] {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+</style>
+</head>
+<body>
+
+    <div class="swiper-container t1">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+      </div>
+    </div>
+    
+  <div class="swiper-container master">
+    <div class="swiper-wrapper">
+    <div class="swiper-slide">A 1</div>
+    <div class="swiper-slide">D 2</div>
+    <div class="swiper-slide">B 3</div>
+    <div class="swiper-slide">C 4</div>
+  </div>
+
+  
+  
+    
+
+
+<div class="swiper-button-next t1"></div>
+<div class="swiper-button-prev t1"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.js"></script>
+
+<script>
+    var swiper = new Swiper('.swiper-container.master', {
+      direction: 'vertical',
+      slidesPerView: 'auto',
+      spaceBetween: 0,
+      // pagination: {
+      //   el: '.swiper-pagination',
+      //   clickable: true,
+      // },
+      // hashNavigation: {
+      //   watchState: true,
+      // },
+      mousewheel: true,
+    });
+    var mySwiper = new Swiper('.swiper-container.t1', {
+      // direction: 'horizontal',
+      speed: 400,
+      spaceBetween: 0,
+      navigation: {
+        nextEl: '.swiper-button-next.t1',
+        prevEl: '.swiper-button-prev.t1',
+      },
+      // loop: true,
+    });
+  </script>
+
+
+</body></html>
