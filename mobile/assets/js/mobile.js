@@ -63,12 +63,12 @@ $(document).ready(function(){
     $('.listname').on('click', function(){
       var current = $(this).closest('.nav')
       if( current.find('.listup').is(':visible') ) {
-        // swiper.mousewheel.disable();
+        swiper.mousewheel.disable();
         current.addClass('full');
         current.find('ul').show();
         current.find('.listup').removeClass('listup').addClass('listdown')
       } else {
-        // swiper.mousewheel.enable();
+        swiper.mousewheel.enable();
         current.removeClass('full');
         current.find('ul').hide();
         current.find('.listdown').removeClass('listdown').addClass('listup')
@@ -109,16 +109,26 @@ $(document).ready(function(){
       var items = [];
 
       var groupImg = $(this).find('.groupImg img');
+      if( groupImg.length > 1 ) {
+        groupImg.attr({'width': 800, 'height': 533})
+      } else {
+        groupImg.attr({'width': 1346, 'height': 1417})
+      }
+
       for (var i = 0; i < groupImg.length; i++) {
         var imgs = $(this).find('.groupImg img').eq(i);
         var src = imgs.attr('src');
+        var w = imgs.attr('width');
+        var h = imgs.attr('height');
 
         var item = {
             src: src,
             // w: parseInt(size[0], 10),
             // h: parseInt(size[1], 10),
-            w: 800,
-            h: 533
+            // w: 800,
+            // h: 533
+            w: w,
+            h: h
         };
         items.push(item);
       }
@@ -139,6 +149,21 @@ $(document).ready(function(){
     // $('.listright').on('click', function(){
     //   $(this).closest('.mask').find('.photo_wrap').css('left', '-' + _width);
     // })
+
+    var dir = "../assets/img";
+    var fileextension = ".png";
+    $.ajax({
+      //This will retrieve the contents of the folder if the folder is configured as 'browsable'
+      url: dir,
+      success: function (data) {
+        //List all .png file names in the page
+        $(data).find("a:contains(" + fileextension + ")").each(function () {
+            var filename = this.href.replace(window.location.host, "").replace("http://", "");
+            $("body").append("<img class='aad' src='" + dir + filename + "'>");
+        });
+      }
+    });
+
 });
 
 // $(window).resize(function(){

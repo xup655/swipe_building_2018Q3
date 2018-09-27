@@ -7,6 +7,9 @@ $(document).ready(function(){
         el: '.swiper-pagination.master',
         clickable: true,
       },
+      hashNavigation: {
+        watchState: true,
+      },
       mousewheel: true,
     });
 
@@ -25,11 +28,14 @@ $(document).ready(function(){
 
     $('.close-btn').click(function(){
       $(this).closest('.mask').addClass('hidden');
+      $(this).closest('.mask').find('.swiper-pagination-bullet').eq(0).click();
     })
+
     $('.click_menu').on('click', 'li', function(){
       var ind = $(this).index();
-      $('.swiper-pagination.t1').find('.swiper-pagination-bullet').eq(ind).click();
-      $('.listname').click();
+      var pid = $(this).closest('.mask').data('pid');
+      $('.swiper-pagination.t' + pid).find('.swiper-pagination-bullet').eq(ind).click();
+      $(this).parent().prev('.listname').click();
     })
 
     $('.listname').on('click', function(){
@@ -60,4 +66,64 @@ $(document).ready(function(){
       },
       loop: true,
     });
+    var mySwiper = new Swiper('.swiper-container.t2', {
+      speed: 100,
+      spaceBetween: 0,
+      navigation: {
+        nextEl: '.listright.t2',
+        prevEl: '.listleft.t2',
+      },
+      pagination: {
+        el: '.swiper-pagination.t2',
+        clickable: true,
+      },
+      loop: true,
+    });
+
+    $('.photo').on('click', function(){
+      var pswpElement = document.querySelectorAll('.pswp')[0];
+      var items = [];
+
+      var groupImg = $(this).find('.groupImg img');
+      if( groupImg.length > 1 ) {
+        groupImg.attr({'width': 800, 'height': 533})
+      } else {
+        groupImg.attr({'width': 1346, 'height': 1417})
+      }
+
+      for (var i = 0; i < groupImg.length; i++) {
+        var imgs = $(this).find('.groupImg img').eq(i);
+        var src = imgs.attr('src');
+        var w = imgs.attr('width');
+        var h = imgs.attr('height');
+
+        var item = {
+            src: src,
+            w: w,
+            h: h
+        };
+        items.push(item);
+      }
+
+
+      var options = {
+          index: 0
+      };
+
+      var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+      gallery.init();
+    })
+
+    var dir = "../assets/img";
+    var fileextension = ".png";
+    $.ajax({
+      url: dir,
+      success: function (data) {
+        $(data).find("a:contains(" + fileextension + ")").each(function () {
+            var filename = this.href.replace(window.location.host, "").replace("http://", "");
+            $("body").append("<img class='aad' src='" + dir + filename + "'>");
+        });
+      }
+    });
+
 });
