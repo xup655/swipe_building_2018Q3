@@ -114,16 +114,4 @@ $(document).ready(function(){
       gallery.init();
     })
 
-    var dir = "../assets/img";
-    var fileextension = ".png";
-    $.ajax({
-      url: dir,
-      success: function (data) {
-        $(data).find("a:contains(" + fileextension + ")").each(function () {
-            var filename = this.href.replace(window.location.host, "").replace("http://", "");
-            $("body").append("<img class='aad' src='" + dir + filename + "'>");
-        });
-      }
-    });
-
 });
