@@ -60,7 +60,7 @@ h4 {
   line-height: 20px;
   color: #4C4948;
   font-size: 16px;
-  margin: 10px 15px 15px;
+  margin: 10px 15px 0;
   letter-spacing: 0.3rem;
   text-transform: uppercase;
   font-weight: 400; }
@@ -139,7 +139,8 @@ h4 {
 .cn2 {
   text-align: left !important;
   margin: 10px;
-  height: 205px; }
+  height: 205px;
+  overflow-y: auto; }
 
 .swiper-slide .content,
 .swiper-slide .content:after,
@@ -305,6 +306,12 @@ h4 {
   width: 90%;
   margin-top: 100px;
   margin-left: -250px; }
+  @media (max-height: 800px) {
+    #showcase img {
+      margin-top: 0; } }
+  @media (max-height: 700px) {
+    #showcase img {
+      margin-top: -100px; } }
 
 .banner-opacity1 img {
   position: absolute;
@@ -313,21 +320,46 @@ h4 {
   top: 0px;
   left: -150px;
   z-index: 99; }
+  @media (max-width: 1360px) {
+    .banner-opacity1 img {
+      left: -50px; } }
 
-.banner-opacity2 img {
+.banner-opacity2 img,
+.banner-opacity3 img {
   position: absolute;
   float: left;
   width: 120%;
   top: -340px;
   left: -50px; }
+  @media (max-height: 900px) {
+    .banner-opacity2 img,
+    .banner-opacity3 img {
+      max-width: 300px; } }
+  @media (max-height: 800px) {
+    .banner-opacity2 img,
+    .banner-opacity3 img {
+      top: -300px; } }
+  @media (max-height: 700px) {
+    .banner-opacity2 img,
+    .banner-opacity3 img {
+      top: -260px; } }
 
 .banner-opacity3 img {
-  position: absolute;
-  float: left;
-  width: 120%;
-  padding: 0px;
   top: -430px;
-  left: 50px; }
+  left: 50px;
+  padding: 0px; }
+  @media (max-width: 1360px) {
+    .banner-opacity3 img {
+      left: 10px; } }
+  @media (max-height: 900px) {
+    .banner-opacity3 img {
+      top: -390px; } }
+  @media (max-height: 800px) {
+    .banner-opacity3 img {
+      top: -350px; } }
+  @media (max-height: 700px) {
+    .banner-opacity3 img {
+      top: -310px; } }
 
 .showcase-left {
   opacity: 1 !important;
@@ -349,7 +381,7 @@ h4 {
   .container {
     width: 1170px; } }
 
-@media (max-width: 992px) {
+@media (max-width: 1150px) {
   .container {
     width: 970px; } }
 
@@ -780,8 +812,9 @@ img.hover-shadow {
 .up_down {
   position: relative;
   animation: up_down .6s;
-  animation-timing-function: ease-out;
-  -webkit-animation-fill-mode: forwards; }
+  animation-timing-function: ease-out; }
+  .up_down.active {
+    opacity: 1 !important; }
 
 @keyframes up_down {
   0% {
@@ -794,8 +827,9 @@ img.hover-shadow {
 .down_up {
   position: relative;
   animation: down_up .8s;
-  animation-timing-function: ease-out;
-  -webkit-animation-fill-mode: forwards; }
+  animation-timing-function: ease-out; }
+  .down_up.active {
+    opacity: 1 !important; }
 
 @keyframes down_up {
   0% {
