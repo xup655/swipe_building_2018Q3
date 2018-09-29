@@ -74,6 +74,7 @@ body {
     list-style: none; }
     .nav_area ul li {
       flex: 1;
+      letter-spacing: 1px;
       color: #fff; }
       .nav_area ul li + li {
         border-left: 1px solid rgba(255, 255, 255, 0.5); }
@@ -170,7 +171,7 @@ body {
   overflow: hidden; }
 
 .photo {
-  max-height: calc(70vh - 80px);
+  max-height: calc(60vh - 80px);
   overflow: hidden; }
 
 .photo_wrap {
@@ -180,12 +181,15 @@ body {
   list-style: none; }
 
 .summary {
-  height: 30vh;
+  height: 40vh;
   overflow-y: auto;
   text-align: left; }
   .summary h2, .summary h4 {
+    margin-bottom: 0;
     line-height: 1.5;
     font-weight: normal; }
+  .summary h2 {
+    font-weight: bold; }
   .summary h3 em {
     font-size: 20px;
     display: block;
@@ -322,3 +326,6 @@ body {
 
 .w-100 {
   width: 100%; }
+
+.pswp--touch .pswp__button--arrow--left, .pswp--touch .pswp__button--arrow--right {
+  visibility: visible !important; }

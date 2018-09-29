@@ -78,7 +78,7 @@ $(document).ready(function(){
         var _num = $('.swiper-container.t' + _pid + ' .swiper-slide').length
         var menu_txt = [];
         for ( var i=0; i < _num; i++) {
-          var txt = '<li>' + $('.swiper-container.t' + _pid + ' h2').eq(i).text() + '</li>'
+          var txt = '<li>' + $('.swiper-container.t' + _pid + ' h4 b').eq(i).text().split(' ')[0] + ' ' + $('.swiper-container.t' + _pid + ' h2').eq(i).text() + '</li>'
           menu_txt.push(txt);
         }
         $('.mask[data-pid="' + _pid + '"]').find('.click_menu').append(menu_txt)

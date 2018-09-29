@@ -77,6 +77,7 @@ body {
         list-style: none;
         li {
             flex: 1;
+            letter-spacing: 1px;
             color: #fff;
             + li {
                 border-left: 1px solid rgba(255, 255, 255, .5);
@@ -199,7 +200,7 @@ body {
   overflow: hidden;
 }
 .photo {
-  max-height: calc(70vh - 80px);
+  max-height: calc(60vh - 80px);
   overflow: hidden;
 }
 .photo_wrap {
@@ -210,15 +211,16 @@ body {
 }
 .summary {
   // margin: 0 20px;
-  height: 30vh;
+  height: 40vh;
   overflow-y: auto;
   text-align: left;
   h2, h4 {
+    margin-bottom: 0;
     line-height: 1.5;
     font-weight: normal;
   }
-  h4 {
-
+  h2 {
+    font-weight: bold;
   }
   h3 {
     em {
@@ -367,4 +369,9 @@ body {
 }
 .w-100 {
   width: 100%;
+}
+
+// Plug in
+.pswp--touch .pswp__button--arrow--left, .pswp--touch .pswp__button--arrow--right {
+  visibility: visible !important;
 }

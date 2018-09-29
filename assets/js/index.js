@@ -73,15 +73,54 @@ $(document).ready(function(){
         observeParents: true
     });
 
-    $('.overlay2 .team_menu_list li a').click(function(){
+    $('.overlay2 .team_menu_list li a').click(function(e){
         var _iid = $(this).closest('.overlay').find('.swiper-container').attr('stype')
         // var inx=$(this).attr('inx');
-        click_func($(this), swiper2, _iid);
+        // click_func($(this), swiper2, _iid);
         // swiper2.slideTo(click_menu_inx, 300, function(){
         // });
         // alert('室內 stype=' + _iid)
+        e.preventDefault();
+        e.stopPropagation();
+
+        click_func2($(this), swiper2, _iid)
     });
 
+    function click_func2(el, _tagg, _iid) {
+        var click_menu_inx = el.attr('inx');
+        if(_tagg.params.slidesPerGroup == 3){
+            _tagg.params.slidesPerGroup = 1;
+            _tagg.params.centeredSlides = true;
+            _tagg.update();
+        }
+        _tagg.slideTo(click_menu_inx, 500);
+        
+        $('.swiper-button-next[stype="' + _iid + '"]').click(function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            if(_tagg.params.slidesPerGroup == 1){
+                var activeIndex = _tagg.activeIndex;
+                _tagg.activeIndex = activeIndex - 1
+                _tagg.params.slidesPerGroup = 3;
+                _tagg.params.centeredSlides = false;
+                _tagg.update();
+                _tagg.slideTo(activeIndex, 500);
+            }
+        });
+        $('.swiper-button-prev[stype="' + _iid + '"]').click(function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            if(_tagg.params.slidesPerGroup == 1){
+                var activeIndex = _tagg.activeIndex;
+                _tagg.activeIndex = activeIndex + 1
+                _tagg.params.slidesPerGroup = 3;
+                _tagg.params.centeredSlides = false;
+                _tagg.update();
+                _tagg.slideTo(activeIndex, 500);
+            }
+        });
+    }
+    
     var swiper3 = new Swiper('.swiper-container[stype="t2"]', {
         direction:"horizontal",
         speed: 1000,
@@ -95,18 +134,53 @@ $(document).ready(function(){
         observer: true,
         observeParents: true
     });
-
-    $('.overlay1 .team_menu_list li a').click(function(){
-        // var inx=$(this).attr('inx');
-        var _iid = $(this).closest('.overlay').find('.swiper-container').attr('stype')
-        click_func($(this), swiper3, _iid);
-        // alert('營建 stype=' + _iid)
-        // swiper3.slideTo(click_menu_inx, 300, function(){
-        // });
+    /////////////////////////  START   營建工程的swiper code  START  (交出去前記得移除註解)  /////////////////////////
+    //點選下拉是選單(交出去前記得移除註解)
+    $('.overlay1 .team_menu_list li a').click(function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        //取得index(交出去前記得移除註解)
+        var click_menu_inx = $(this).attr('inx');
+        //假如是左右箭頭點選的話則改變成一頁單個，並且置中(交出去前記得移除註解)
+        if(swiper3.params.slidesPerGroup == 3){
+            swiper3.params.slidesPerGroup = 1;
+            swiper3.params.centeredSlides = true;
+            swiper3.update();
+        }
+        //移動到指定index(交出去前記得移除註解)
+        swiper3.slideTo(click_menu_inx, 500);
     });
-    // alert( '第 ' + 8 % 3 + '個' )
-    // alert('(369偏左 / 147置中 / 258靠右)')
-    // %0 偏左 / %1 置中 / %2 靠右
+    //點選下一頁(交出去前記得移除註解)
+    $('.swiper-button-next[stype="t2"]').click(function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        //假如原本是一頁一個，置中的話就改變成預設值(交出去前記得移除註解)
+        if(swiper3.params.slidesPerGroup == 1){
+            //先取得點選下一頁後的index(交出去前記得移除註解)
+            var activeIndex = swiper3.activeIndex;
+            //為了讓套件動畫還有作用，所以先讓套件恢復動前的index(交出去前記得移除註解)
+            swiper3.activeIndex = activeIndex - 1
+            swiper3.params.slidesPerGroup = 3;
+            swiper3.params.centeredSlides = false;
+            swiper3.update();
+            //為了套件動畫，所以移動到指定的index(交出去前記得移除註解)
+            swiper3.slideTo(activeIndex, 500);
+        }
+    });
+    //點選上一頁，跟點選下一頁邏輯相反(交出去前記得移除註解)
+    $('.swiper-button-prev[stype="t2"]').click(function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        if(swiper3.params.slidesPerGroup == 1){
+            var activeIndex = swiper3.activeIndex;
+            swiper3.activeIndex = activeIndex + 1
+            swiper3.params.slidesPerGroup = 3;
+            swiper3.params.centeredSlides = false;
+            swiper3.update();
+            swiper3.slideTo(activeIndex, 500);
+        }
+    });
+    // %0 369偏左 / %1 147置中 / %2 258靠右
     function click_func(element, _tagg ,_iid) {
         click_menu_inx = element.attr('inx');
         var center_inx = click_menu_inx % 3;
@@ -154,7 +228,9 @@ $(document).ready(function(){
             }, 2000);
 
             // click_menu_inx = 2.5
+            
         }
+
     }
 
     $('.trigger_home').on('click', function(){
