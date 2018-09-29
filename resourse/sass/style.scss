@@ -545,9 +545,10 @@ height: 100%;
   z-index: 99;
 }
 .trigger_about img,
-.trigger_project img {
+.trigger_project img,
+.trigger_footer img {
   position: fixed;
-  top: -350;
+  // top: -350;
   left: 50%;
   width: 40px;
   height: 40px;
