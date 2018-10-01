@@ -170,7 +170,6 @@ body {
   overflow: hidden; }
 
 .photo {
-  max-height: calc(60vh - 80px);
   overflow: hidden; }
 
 .photo_wrap {
