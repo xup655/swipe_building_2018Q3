@@ -198,6 +198,12 @@ body {
   width: 70vw;
   overflow: hidden;
 }
+.project-cont .swiper-slide {
+  @media (max-height: 768px) {
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+}
 .photo {
   // max-height: calc(60vh - 80px);
   overflow: hidden;
@@ -209,9 +215,8 @@ body {
   list-style: none;
 }
 .summary {
-  // margin: 0 20px;
-  height: 40vh;
-  overflow-y: auto;
+  // height: 40vh;
+  // overflow-y: auto;
   text-align: left;
   h2, h4 {
     margin-bottom: 0;
