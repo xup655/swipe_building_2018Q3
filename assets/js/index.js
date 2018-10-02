@@ -304,7 +304,7 @@ $(document).ready(function(){
             // setTimeout(function() {
                 if( !$('.fadein-card').hasClass('scrollin') ) {
                     // $('.fadein-card').addClass('scrollin')
-                    // $('.swiper-pagination').first().find('.swiper-pagination-bullet').eq(2).click();
+                    $('.swiper-pagination').first().find('.swiper-pagination-bullet').eq(2).click();
                     setTimeout(function() {
                         $('.fadein-card').addClass('scrollin')
                     }, 100);
