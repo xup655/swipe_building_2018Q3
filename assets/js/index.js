@@ -301,11 +301,12 @@ $(document).ready(function(){
         
     setInterval(function(){
         if( $('#project').hasClass('swiper-slide-active')) {
-            setTimeout(function() {
+            // setTimeout(function() {
                 if( !$('#project').hasClass('active') ) {
-                    $('.fadein-card').addClass('scrollin')
+                    alert('')
+                    // $('.fadein-card').addClass('scrollin')
                 }
-            }, 800);
+            // }, 800);
         }
     }, 1000);
 
