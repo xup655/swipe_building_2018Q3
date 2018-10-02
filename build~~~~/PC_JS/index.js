@@ -227,7 +227,6 @@ $(document).ready(function(){
     })
 
     $('body').on('mousewheel', function(e){
-        alert('')
         var window_h = $(window).height();
         if( $('.about-tit').offset().top > window_h && e.deltaY == -1 ) {
             $('.about-tit, .about-cont').css('opacity', 0)
@@ -251,7 +250,7 @@ $(document).ready(function(){
                 $('.fadein-card').addClass('scrollin')
             }
         }
-    }, 500);
+    }, 400);
 
     setInterval(function(){
         if( $('#project').hasClass('zz')) {
