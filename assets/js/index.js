@@ -301,17 +301,12 @@ $(document).ready(function(){
         
     setInterval(function(){
         if( $('#project').hasClass('swiper-slide-active')) {
-            // setTimeout(function() {
-                if( !$('.fadein-card').hasClass('scrollin') ) {
-                    // $('.fadein-card').addClass('scrollin')
-                    $('.swiper-pagination').first().find('.swiper-pagination-bullet').eq(2).click();
-                    setTimeout(function() {
-                        $('.fadein-card').addClass('scrollin')
-                    }, 100);
-                }
-            // }, 800);
+            if( !$('.fadein-card').hasClass('scrollin') ) {
+                $('.fadein-card').addClass('scrollin')
+                $('.swiper-pagination').first().find('.swiper-pagination-bullet').eq(2).click();
+            }
         }
-    }, 1000);
+    }, 100);
 
     setInterval(function(){
         if( $('#project').hasClass('zz')) {
