@@ -303,8 +303,7 @@ $(document).ready(function(){
         if( $('#project').hasClass('swiper-slide-active')) {
             // setTimeout(function() {
                 if( !$('.fadein-card').hasClass('scrollin') ) {
-                    alert('')
-                    // $('.fadein-card').addClass('scrollin')
+                    $('.fadein-card').addClass('scrollin')
                 }
             // }, 800);
         }
