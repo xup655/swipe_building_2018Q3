@@ -250,7 +250,7 @@ $(document).ready(function(){
                 $('.fadein-card').addClass('scrollin')
             }
         }
-    }, 400);
+    }, 800);
 
     setInterval(function(){
         if( $('#project').hasClass('zz')) {
