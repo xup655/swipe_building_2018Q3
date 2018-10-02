@@ -309,7 +309,7 @@ $(document).ready(function(){
                     // }, 100);
                 }
         }
-    }, 1000);
+    }, 100);
 
     setInterval(function(){
         if( $('#project').hasClass('zz')) {
