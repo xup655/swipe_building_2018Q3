@@ -416,9 +416,9 @@ h4 {
   z-index: 99; }
 
 .trigger_about img,
-.trigger_project img {
+.trigger_project img,
+.trigger_footer img {
   position: fixed;
-  top: -350;
   left: 50%;
   width: 40px;
   height: 40px;
@@ -852,6 +852,22 @@ img.fadein-card {
     transform: rotateY(0deg) translate(0, 0); }
 
 @keyframes scrollin {
+  0% {
+    opacity: 0;
+    bottom: -40vh; }
+  100% {
+    opacity: 1;
+    bottom: 0; } }
+
+@-moz-keyframes scrollin {
+  0% {
+    opacity: 0;
+    bottom: -40vh; }
+  100% {
+    opacity: 1;
+    bottom: 0; } }
+
+@-webkit-keyframes scrollin {
   0% {
     opacity: 0;
     bottom: -40vh; }

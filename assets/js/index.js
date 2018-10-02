@@ -299,13 +299,13 @@ $(document).ready(function(){
             }, 800);
         }*/
         
-    setInterval(function(){
-        if( $('#project').hasClass('swiper-slide-active')) {
-            if( !$('.fadein-card').hasClass('scrollin') ) {
-                $('.fadein-card').addClass('scrollin')
-            }
-        }
-    }, 1000);
+    // setInterval(function(){
+    //     if( $('#project').hasClass('swiper-slide-active')) {
+    //         if( !$('.fadein-card').hasClass('scrollin') ) {
+    //             $('.fadein-card').addClass('scrollin')
+    //         }
+    //     }
+    // }, 1000);
 
     setInterval(function(){
         if( $('#project').hasClass('zz')) {
