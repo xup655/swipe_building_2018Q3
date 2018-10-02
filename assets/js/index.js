@@ -282,6 +282,23 @@ $(document).ready(function(){
     
 
     setInterval(function(){
+        if( $('#about').hasClass('swiper-slide-active')) {
+            // $('.about-tit, .about-cont').css('opacity', 0)
+            // $('.about-tit').addClass('up_down')
+            // $('.about-cont').addClass('down_up')
+            setTimeout(function() {
+                if( !$('#about').hasClass('active') ) {
+                    $('.about-tit, .about-cont').addClass('active')
+                }
+            }, 800);
+        }
+        if( $('#project').hasClass('swiper-slide-active')) {
+            setTimeout(function() {
+                if( !$('#project').hasClass('active') ) {
+                    $('.fadein-card').addClass('scrollin')
+                }
+            }, 800);
+        }
         if( $('#project').hasClass('zz')) {
             swiper.activeIndex = 3
             $('#project').removeClass('swiper-slide-active zz').addClass('swiper-slide-prev transitioned');;

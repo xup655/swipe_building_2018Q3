@@ -41,7 +41,7 @@ body {
   position: relative;
   margin: 0 auto;
   width: 90vw;
-  height: 70vh; }
+  height: 60vh; }
   @media (max-height: 414px) {
     .slogan {
       height: 130px; } }
