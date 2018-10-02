@@ -305,7 +305,7 @@ $(document).ready(function(){
                 $('.fadein-card').addClass('scrollin')
             }
         }
-    }, 500);
+    }, 800);
 
     setInterval(function(){
         if( $('#project').hasClass('zz')) {
